@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block contents %}
+
+<body class = text-center >
+  <div style= " margin-left: 30em; margin-right: 30em; margin-top:0em; padding-bottom: 2em" >
+    <h1 style = "padding-top: 100px">Login</h1>
+    <form method="POST">
+      <img class="mb-4" src="static/wine-glass.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      {{form.hidden_tag()}}
+      {{form.email.label}}{{form.email(style = "margin-left:2.6em; margin-bottom:0.5em")}} <br>
+      {{form.password.label}}{{form.password(style = "margin-left:0.9em; margin-bottom:1.5em")}} <br>
+      <div"> {{form.submit(class="btn btn-primary btn-lg")}} </div>
+      <!-- <button type="button" class="btn btn-primary btn-lg">{{form.submit()}}</button> -->
+
+    </form>
+
+  </div>
+
+</body>
+
+
+{% endblock %}
