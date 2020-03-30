@@ -1,4 +1,6 @@
 venvapp
 *.sqlite
-migrationsi
+migrations
 __pycache__
+to do
+test

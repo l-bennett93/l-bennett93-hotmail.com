@@ -67,8 +67,6 @@ def dashboard():
         db.session.add(sample)
         db.session.commit()
         return redirect(url_for("sample_analysis", sample_id = sample.sample_id))
-    # print("Current user", current_user.id)
-    # print(f"Valid on submit: {form.validate_on_submit()}")
     samples = Sample.query.filter_by(customer_id = current_user.id).all()
     return render_template("dashboard.html", form = form, samples = samples)
 
