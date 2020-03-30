@@ -9,6 +9,10 @@ from flask_login import login_user, login_required, logout_user, current_user
 def index():
     return render_template("index.html")
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route("/login", methods = ["GET", "POST"])
 def login():
     form = UserLoginForm()

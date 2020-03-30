@@ -25,7 +25,7 @@
         <!-- Wine Image -->
           <li class="navitem">
             <a href="{{ url_for('dashboard')}}">
-              <img src="static/wine-glass.png" style="width:40px;height:50px;">
+              <img src="{{url_for('static', filename='wine-glass.png')}}" style="width:40px;height:50px;">
             </a>
           </li>
           <!-- App Name Header -->
@@ -63,7 +63,6 @@
         <li>
           <a style="padding-top: 0.7em"  class="navbar-brand" href="{{ url_for('registration') }}">Register</a>
         </li>
-
         {% endif %}
       </ul>
     </nav>
@@ -73,7 +72,7 @@
 
   </body>
   <!-- File JS -->
-  <script src="url_for('static',filename='dashboard.js')">
+  <script src="{{url_for('static', filename='dashboard.js')}}"></script>
 
   </script>
 </html>

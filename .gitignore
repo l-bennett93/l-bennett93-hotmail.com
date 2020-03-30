@@ -1,0 +1,4 @@
+venvapp
+*.sqlite
+migrationsi
+__pycache__

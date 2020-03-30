@@ -1,0 +1,11 @@
+Set up forms
+set up views
+create html
+move from workzeug to a more scalable solution
+
+
+
+https://christophm.github.io/interpretable-ml-book/shap.html
+https://christophm.github.io/interpretable-ml-book/lime.html#lime
+https://christophm.github.io/interpretable-ml-book/tree.html
+https://github.com/slundberg/shap
