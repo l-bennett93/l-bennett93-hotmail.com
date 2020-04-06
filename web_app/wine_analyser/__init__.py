@@ -33,3 +33,9 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 db = SQLAlchemy(app)
 Migrate(app, db)
+
+from wine_analyser.samples.views import sample_blueprint
+from wine_analyser.users.views import users_blueprint
+
+app.register_blueprint(sample_blueprint,url_prefix = "/sample")
+app.register_blueprint(users_blueprint,url_prefix = "/users")

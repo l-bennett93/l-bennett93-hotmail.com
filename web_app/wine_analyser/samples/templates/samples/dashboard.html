@@ -92,7 +92,7 @@
     </thead>
     <tbody>
       {%for sample in samples%}
-      <tr onclick="window.location.href='{{ url_for('sample_analysis', sample_id = sample.sample_id)}}';">
+      <tr onclick="window.location.href='{{ url_for('samples.sample_analysis', sample_id = sample.sample_id)}}';">
         <th scope="row">{{sample.sample_id}}</th>
         <td style="background:#E8E8E8" >{{sample.quality}}</td>
         <td>{{sample.fixed_acidity}}</td>
