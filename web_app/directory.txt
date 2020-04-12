@@ -1,0 +1,23 @@
+|----app.py #main app.py file to be started for the web application
+|----requirements.txt #File to set up a virtual environment
+|----migrations #Folder for database migrations
+|----wine analyzer #main project folder
+|    |   data.sqlite #Database
+|    |   models.py #Holds all the database models
+|    |   __init__.py #instantiate the flask app, database, login manager
+|    |
+|    |----users
+|    |    |	forms.py
+|    |    |	views.py
+|    |    |
+|    |	  |-----templates
+|    |    |	|    login.html
+|    |    |	|    registeration.html
+|    |
+|    |----samples
+|    |    |	forms.py
+|    |    |	views.py
+|    |    |
+|    |	  |-----templates
+|    |    |	|    dashboard.html
+|    |    |	|    sample_analysis.html

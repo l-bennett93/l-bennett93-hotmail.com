@@ -24,22 +24,22 @@
         {% if current_user.is_authenticated %}
         <!-- Wine Image -->
           <li class="navitem">
-            <a href="{{ url_for('samples.dashboard')}}">
+            <a href="{{ url_for('dashboard')}}">
               <img src="{{url_for('static', filename='wine-glass.png')}}" style="width:40px;height:50px;">
             </a>
           </li>
           <!-- App Name Header -->
           <li class="navitem">
-              <a style="font-size: 30px" class="navbar-brand" href="{{ url_for('samples.dashboard') }} ">Wine Analysis</a>
+              <a style="font-size: 30px" class="navbar-brand" href="{{ url_for('dashboard') }} ">Wine Analysis</a>
           </li>
 
         <!-- Authenticated Dashboard -->
         <li class="navitem">
-          <a style="padding-top: 0.7em" class="navbar-brand" href="{{ url_for('samples.dashboard') }}">Dashboard</a>
+          <a style="padding-top: 0.7em" class="navbar-brand" href="{{ url_for('dashboard') }}">Dashboard</a>
         </li>
 
         <li class="navitem">
-          <a style="padding-left: 42em; padding-top: 0.7em" class="navbar-brand" href="{{ url_for('users.logout') }}">Log Out</a>
+          <a style="padding-left: 42em; padding-top: 0.7em" class="navbar-brand" href="{{ url_for('logout') }}">Log Out</a>
         </li>
 
         {% else %}
@@ -56,12 +56,12 @@
 
         <!-- Login -->
         <li class="navitem">
-          <a style="padding-left: 42em; padding-top: 0.7em" class="navbar-brand" href="{{ url_for('users.login') }}">Log In</a>
+          <a style="padding-left: 42em; padding-top: 0.7em" class="navbar-brand" href="{{ url_for('login') }}">Log In</a>
         </li>
 
         <!-- registration -->
         <li>
-          <a style="padding-top: 0.7em"  class="navbar-brand" href="{{ url_for('users.registration') }}">Register</a>
+          <a style="padding-top: 0.7em"  class="navbar-brand" href="{{ url_for('registration') }}">Register</a>
         </li>
         {% endif %}
       </ul>

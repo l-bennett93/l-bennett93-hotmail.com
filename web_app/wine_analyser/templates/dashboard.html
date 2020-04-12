@@ -1,0 +1,114 @@
+{% extends "base.html"%}
+{%block contents%}
+
+<div class="container" style="width:90%; height: 90%;
+                              border-radius: 15px; margin-top:50px; padding-top:20px; padding-bottom: 10px" >
+
+  <div class="container">
+  <div class="row">
+    <div class="col-sm" style= " margin-left: 10em; margin-right: 10em; margin-top:0em; padding-bottom: 0em" >
+      <h1 style= " margin-left: 7em;">How it Works</h1><br>
+      <img style= " margin-left: 22em;" class="mb-4" src="static/wine-glass.png" alt="" width="72" height="72">
+
+      <p>
+        Input your sample data below. We will then run some calculations regarding the
+        quality of the sample. From here, you can further examine the properties of the wine by selecting
+        the sample in the table below.
+      </p>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" style = "padding-top: 50px; padding-left: 10em; padding-right: 10em">
+<form method="POST">
+  <h1 style="text-align:center; padding-bottom:1em">Add a New Sample</h1>
+<div class="row">
+{{form.hidden_tag()}}
+
+    <div class="col-sm">
+      <div style="padding-bottom:0.5em">{{form.fixed_acidity.label}}</div>
+      <div style="padding-bottom:0.5em">{{form.volatile_acidity.label}}</div>
+      <div style="padding-bottom:0.5em">{{form.citric_acid.label}}</div>
+      <div style="padding-bottom:0.5em">{{form.residual_sugar.label}}</div>
+      <div style="padding-bottom:0.5em">{{form.chlorides.label}}</div>
+      <div style="padding-bottom:0.5em">{{form.free_sulfur_dioxide.label}}</div>
+
+    </div>
+  <div class="col-sm">
+      <div style="padding-bottom:0.5em">{{form.fixed_acidity()}}</div>
+      <div style="padding-bottom:0.5em">{{form.volatile_acidity()}}</div>
+      <div style="padding-bottom:0.5em">{{form.citric_acid()}}</div>
+      <div style="padding-bottom:0.5em">{{form.residual_sugar()}}</div>
+      <div style="padding-bottom:0.5em">{{form.chlorides()}}</div>
+      <div style="padding-bottom:0.5em">{{form.free_sulfur_dioxide()}}</div>
+  </div>
+
+  <div class="col-sm">
+    <div style="padding-bottom:0.5em">{{form.total_sulfur_dioxide.label}}</div>
+    <div style="padding-bottom:0.5em">{{form.density.label}}</div>
+    <div style="padding-bottom:0.5em">{{form.ph.label}}</div>
+    <div style="padding-bottom:0.5em">{{form.sulphates.label}}</div>
+    <div style="padding-bottom:0.5em">{{form.alcohol.label}}</div>
+  </div>
+
+  <div class="col-sm">
+    <div style="padding-bottom:0.5em">{{form.total_sulfur_dioxide()}}</div>
+    <div style="padding-bottom:0.5em">{{form.density()}}</div>
+    <div style="padding-bottom:0.5em">{{form.ph()}}</div>
+    <div style="padding-bottom:0.5em">{{form.sulphates()}}</div>
+    <div style="padding-bottom:0.5em">{{form.alcohol()}}</div>
+  </div>
+
+  <div style="padding-left:21em; padding-top:1em"> {{form.submit(class="btn btn-primary btn-lg")}} </div>
+
+  </form>
+
+
+
+</div>
+
+<div class="container" style="padding-top:5em; padding-bottom:5em">
+  <h1 style="text-align:center; padding-bottom:1em">Sample History</h1>
+
+  <table class="table table-hover table-responsive" >
+    <thead>
+      <tr>
+        <th scope='col'> Sample id </th>
+        <th scope='col'> Quality </th>
+        <th scope='col'> Fixed Acidity </th>
+        <th scope='col'> Volatile Acidity </th>
+        <th scope='col'> Citric Acid </th>
+        <th scope='col'> Residual Sugar </th>
+        <th scope='col'> Chlorides </th>
+        <th scope='col'> Free Sulfur Dioxide </th>
+        <th scope='col'> Total Sulfur Dioxide </th>
+        <th scope='col'> Density </th>
+        <th scope='col'> pH </th>
+        <th scope='col'> Sulphates </th>
+        <th scope='col'> Alcohol </th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for sample in samples%}
+      <tr onclick="window.location.href='{{ url_for('sample_analysis', sample_id = sample.sample_id)}}';">
+        <th scope="row">{{sample.sample_id}}</th>
+        <td style="background:#E8E8E8" >{{sample.quality}}</td>
+        <td>{{sample.fixed_acidity}}</td>
+        <td>{{sample.volatile_acidity}}</td>
+        <td>{{sample.citric_acid}}</td>
+        <td>{{sample.residual_sugar}}</td>
+        <td>{{sample.chlorides}}</td>
+        <td>{{sample.free_sulfur_dioxide}}</td>
+        <td>{{sample.total_sulfur_dioxide}}</td>
+        <td>{{sample.density}}</td>
+        <td>{{sample.ph}}</td>
+        <td>{{sample.sulphates}}</td>
+        <td>{{sample.alcohol}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

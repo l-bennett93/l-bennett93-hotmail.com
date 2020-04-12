@@ -1,5 +1,5 @@
 from wine_analyser import app, db
-from flask import Blueprint, render_template, redirect, url_for, request
+from flask import Blueprint, render_template, redirect, url_for, request, jsonify
 from wine_analyser.samples.forms import SampleForm
 from wine_analyser.models import Sample
 from flask_login import login_user, login_required, logout_user, current_user
