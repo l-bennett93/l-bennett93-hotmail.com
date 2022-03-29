@@ -138,7 +138,7 @@ nbformat==4.4.0
 notebook==6.0.2
 oauthlib==3.1.0
 pandocfilters==1.4.2
-paramiko==2.7.1
+paramiko==2.10.1
 parso==0.5.1
 pbr==5.4.4
 pickleshare==0.7.5
